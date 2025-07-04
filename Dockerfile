@@ -8,7 +8,7 @@ WORKDIR /app/public
 COPY public/package*.json ./
 RUN npm install
 
-# Run the frontend build command
+# Temporary comment to bust cache
 RUN npm run build
 RUN ls -la /app/public # Add this line
 
