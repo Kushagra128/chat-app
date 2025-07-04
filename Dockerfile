@@ -22,7 +22,7 @@ RUN npm install
 COPY server .
 
 # Copy frontend build output to the location served by the backend
-COPY --from=0 /app/public/build /app/public/public
+COPY /app/public/build /app/public/public
 
 # Expose the backend port
 EXPOSE 5000
