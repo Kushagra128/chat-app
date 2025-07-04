@@ -6,6 +6,7 @@ const messageRoutes = require("./routes/messages");
 const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
+const path = require("path");
 
 app.use(
 	cors({
@@ -33,6 +34,15 @@ app.get("/ping", (_req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Catch-all route to serve index.html for any unmatched routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public', 'index.html'));
+});
+
 
 const PORT = process.env.PORT || 5000;
 
