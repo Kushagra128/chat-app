@@ -10,6 +10,7 @@ RUN npm install
 
 # Run the frontend build command
 RUN npm run build
+RUN ls -la /app/public # Add this line
 
 # Set working directory for the backend
 WORKDIR /app/server
@@ -21,7 +22,7 @@ RUN npm install
 # Copy backend files
 COPY server .
 
-# Copy frontend build output to the location served by the backend
+# Copy frontend build output from inside the container to the location served by the backend
 COPY /app/public/build /app/public/public
 
 # Expose the backend port
