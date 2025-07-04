@@ -1,0 +1,47 @@
+# Node modules
+node_modules/
+public/node_modules/
+server/node_modules/
+
+# Build output
+public/build/
+public/dist/
+server/dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+public/.env
+server/.env
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Docker
+*.local
+*.pid
+docker-compose.override.yml
+
+# Misc
+coverage/
+public/coverage/
+server/coverage/
+
+# Ignore build lock files if not used
+public/package-lock.json
+server/package-lock.json
+public/yarn.lock
+server/yarn.lock 
